@@ -5,7 +5,9 @@
 
 // Dimensions
 $max-content-width: {{ site.max_width }};
-
+.profile .more-info {
+  font-size: 0.70rem;
+}
 @import
   "variables",
   "themes",
