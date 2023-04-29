@@ -37,7 +37,7 @@
       ]
     },
     {
-      "name": "PwC Australia",
+      "name": "PwC Ventures",
       "position": "Technical Lead (Senior Manager) | Ventures",
       "url": "https://www.pwc.com/gx/en/about/new-ventures.html",
       "startDate": "Jul 2018",
@@ -64,28 +64,34 @@
         "Taught the curriculum, graded assignments and provided feedback",
         "Provided career guidance and support to students"
       ]
+    },
+    {
+      "name": "PwC Ventures",
+      "position": "Lead Developer",
+      "url": "https://www.pwc.com/gx/en/about/new-ventures.html",
+      "startDate": "Nov 2014",
+      "endDate": "Jul 2018",
+      "summary": "Lead developer on a variety of online products across web and mobile.",
+      "highlights": [
+        "Launched the first ever online portal for lodging R&D tax incentive claims in Australia",
+        "Launched https://airtax.com.au/ - allowing Uber drivers and other sole traders to lodge their tax and BAS online",
+        "Spearheaded the development of a range of internal automation tools"
+      ]
     }
   ],
   "volunteer": [],
-  "awards": [
-    {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
-    }
-  ],
+  "awards": [],
   "certificates": [],
   "publications": [],
   "skills": [],
   "languages": [
     {
-      "language": "German",
+      "language": "English",
       "fluency": "Native speaker"
     },
     {
-      "language": "English",
-      "fluency": "Fluent"
+      "language": "Indonesian",
+      "fluency": "Conversational"
     }
   ],
   "interests": [],
