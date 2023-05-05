@@ -74,8 +74,32 @@
       "summary": "Lead developer on a variety of online products across web and mobile.",
       "highlights": [
         "Launched the first ever online portal for lodging R&D tax incentive claims in Australia",
-        "Launched https://airtax.com.au/ - allowing Uber drivers and other sole traders to lodge their tax and BAS online",
+        "Launched airtax.com.au - allowing Uber drivers and other sole traders to lodge their tax and BAS online",
         "Spearheaded the development of a range of internal automation tools"
+      ]
+    },
+    {
+      "name": "Connect Solutions",
+      "position": "Lead Full Stack Developer",
+      "url": "https://connect.solutions/",
+      "startDate": "Dec 2012",
+      "endDate": "Nov 2014",
+      "summary": "Lead the development of a wide range of video focused products for the film and festival industry.",
+      "highlights": [
+        "Built video streaming platforms for Edinburg Film Festival, Glasgow Fringe Festival and others",
+        "Launched a SaaS video streaming platform for film festival 'Videotheque' systems"
+      ]
+    },
+    {
+      "name": "Uniball",
+      "position": "Lead API and Mobile Developer",
+      "url": "https://uniball.com.au/",
+      "startDate": "Dec 2012",
+      "endDate": "Nov 2014",
+      "summary": "Development of internal iOS applications for the Uniball sales team.",
+      "highlights": [
+        "Developed an offline-capable, real time iPad application for the mobile sales team",
+        "Development of the sales API and backend systems"
       ]
     }
   ],
