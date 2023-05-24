@@ -20,6 +20,88 @@
       }
     ]
   },
+  "skills": [
+    {
+      "name": "Software architecture and design",
+      "icon": "fa fa-cubes",
+      "keywords": [
+        "Expert - 12+ years experience"
+      ]
+    },
+    {
+      "name": "Leading teams + products",
+      "icon": "fa-solid fa-people-line",
+      "keywords": [
+        "Expert - 8+ years experience"
+      ]
+    },
+    {
+      "name": "Ruby (+ Rails)",
+      "icon": "fa fa-gem",
+      "keywords": [
+        "Expert - 12+ years experience"
+      ]
+    },{
+      "name": "PostgreSQL",
+      "icon": "fa fa-database",
+      "keywords": [
+        "Expert - 12+ years experience"
+      ]
+    },{
+      "name": "Kubernetes (+ Custom Operators)",
+      "icon": "fa fa-anchor",
+      "keywords": [
+        "Expert - 4+ years experience"
+      ]
+    },
+    {
+      "name": "Cloud Engineering (GCP, Azure, AWS, Heroku)",
+      "icon": "fa fa-cloud",
+      "keywords": [
+        "Advanced - 12+ years experience"
+      ]
+    },
+    {
+      "name": "NodeJS (+ Express)",
+      "icon": "fa-brands fa-node-js",
+      "keywords": [
+        "Expert - 8+ years experience"
+      ]
+    }, {
+      "name": "Svelte (+ SvelteKit)",
+      "icon": "fa-brands fa-square-js",
+      "keywords": [
+        "Expert - 4+ years experience"
+      ]
+    },
+    {
+      "name": "Go",
+      "icon": "fa-brands fa-golang",
+      "keywords": [
+        "Advanced - 3+ years experience"
+      ]
+    }, {
+      "name": "TailwindCSS",
+      "icon": "fa-brands fa-css3-alt",
+      "keywords": [
+        "Expert - 4+ years experience"
+      ]
+    }, {
+      "name": "React",
+      "icon": "fa-brands fa-react",
+      "keywords": [
+        "Intermediate"
+      ]
+    }, {
+      "name": "Angular",
+      "icon": "fa-brands fa-angular",
+      "keywords": [
+        "Intermediate"
+      ]
+    }, {
+      
+    }
+  ],
   "work": [
     {
       "name": "Powerful low code application builder",
@@ -101,13 +183,31 @@
         "Developed an offline-capable, real time iPad application for the mobile sales team",
         "Development of the sales API and backend systems"
       ]
+    },
+    {
+      "name": "Capture.Us / Cinch Video",
+      "position": "Lead iOS Developer",
+      "url": "https://www.linkedin.com/company/capture-us/about/",
+      "startDate": "Dec 2012",
+      "endDate": "Oct 2013",
+      "summary": "Lead iOS developer for a video sharing platform startup based in Melbourne, Australia.",
+      "highlights": [
+        "Developed a highly performant video sharing application for iOS"
+      ]
+    },
+    {
+      "name": "Edenfest",
+      "position": "Lead Developer",
+      "startDate": "Jun 2012",
+      "endDate": "Mar 2013",
+      "summary": "Lead web and desktop developer, producing a range of festival management tools.",
+      "highlights": []
     }
   ],
   "volunteer": [],
   "awards": [],
   "certificates": [],
   "publications": [],
-  "skills": [],
   "languages": [
     {
       "language": "English",
