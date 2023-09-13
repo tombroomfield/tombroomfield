@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Introducing CanIKit - Don't forget to authorize!
-date: 2015-07-15 15:09:00
-description: an example of a blog post with some code
+date: 2023-09-13 22:25:18
+description: The missing authorization library for SvelteKit!
 tags: authorization, sveltekit
 categories: open-source
 featured: true
