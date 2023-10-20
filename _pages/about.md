@@ -37,7 +37,7 @@ Feel free to reach out at hi@tombroomfield.com
 
 
 ##### Things I don't love
-* Clever code, unnecessary abstractions.
+* Unnecessary abstractions.
 * Meetings, especially meetings about meetings and meetings to check in on tasks.
 * Golf
 
