@@ -23,6 +23,10 @@ _Gain hands-on experience with industry-standard tools — HTML5, CSS3, JavaScri
 
 #### Course Feedback:
 
+> Tom is an exceptionally skilled software engineer with deep expertise in programming and web development. His ability to simplify complex concepts makes him an outstanding teacher. I had the privilege of being his student in a Front-end Web Development course at General Assembly, and his generous teaching greatly benefited my career. Tom's knowledge and teaching style are truly exceptional. Without a doubt, if I hadn't met Tom, my career would have taken a different path.
+
+~ [Timothy Phillips](https://www.linkedin.com/in/tim-phillips-975239b9/), Product Manger at [CarSales](https://www.carsales.com.au/)
+
 > Tom was a fantastic teacher. He were so encouraging and without a push from Tom, I might not have landed a junior front-end dev job in the last week!
 
 > Tom was amazing. He is extremely patient and always make sure that no one's left behind. I am thoroughly enjoying this course and would 100% recommend this course!
