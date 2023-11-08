@@ -3,8 +3,8 @@ layout: post
 title: My reading list for new developers
 date: 2023-10-20 20:19:44
 description: Starting out in software development? Here's a list of books that will put you on the right path.
-tags: programming, clean code, oop
-categories: books
+tags: programming, clean-code, oop
+categories: learning
 featured: false
 ---
 
