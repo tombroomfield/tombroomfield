@@ -1,7 +1,6 @@
 github_users:
   - tombroomfield
-  - tom-asmblr
 
 github_repos:
   - tombroomfield/canikit
-  - tombroomfield/tombroomfield
+  - tombroomfield/SeqScanner
