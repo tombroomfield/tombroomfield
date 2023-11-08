@@ -7,6 +7,8 @@ importance: 1
 category: open source
 ---
 
+#### [View CanIKit on GitHub](https://github.com/tombroomfield/CanIKit)
+
 CanIKit is a SvelteKit library that provides a simple way to add authorization to your SvelteKit application. It is heavily inspired by [Pundit](https://github.com/varvet/pundit);
 
 The main purpose of CanIKit is to provide a simple way to isolate server-side authorization logic from your route files. This allows for a better separation of concerns and helps keep your +server, +layout.server, and +page.server files cleaner.
