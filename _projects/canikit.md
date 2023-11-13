@@ -51,6 +51,7 @@ In the likely event that you are already using a hook, simply utilize the Svelte
 
 ```typescript
 // hooks.server.ts
+import { error } from "@sveltejs/kit";
 import CanIKit from "canikit";
 import { sequence } from "@sveltejs/kit/hooks";
 
@@ -58,14 +59,19 @@ import { sequence } from "@sveltejs/kit/hooks";
 
 export const handle = sequence(
   // ... other hooks,
-  CanIKit.handle({
-    pagePolicies: import.meta.glob("./routes/**/page.policy.*"),
-    pageSevers: import.meta.glob("./routes/**/+page.server.*"),
-    layoutPolicies: import.meta.glob("./routes/**/layout.policy.*"),
-    layoutServers: import.meta.glob("./routes/**/+layout.server.*"),
-    apiServers: import.meta.glob("./routes/**/+server.*"),
-    apiPolicies: import.meta.glob("./routes/**/policy.*"),
-  })
+  CanIKit.handle(
+    {
+      error,
+    },
+    {
+      pagePolicies: import.meta.glob("./routes/**/page.policy.*"),
+      pageSevers: import.meta.glob("./routes/**/+page.server.*"),
+      layoutPolicies: import.meta.glob("./routes/**/layout.policy.*"),
+      layoutServers: import.meta.glob("./routes/**/+layout.server.*"),
+      apiServers: import.meta.glob("./routes/**/+server.*"),
+      apiPolicies: import.meta.glob("./routes/**/policy.*"),
+    }
+  )
 );
 ```
 
@@ -92,8 +98,18 @@ This very simple policy just checks to ensure that we have a signed in user, oth
 
 ```typescript
 // page.policy.ts
+export async function view({ user }) {
+  if (!user) return false;
+  return true;
+}
+```
+
+Or, if you prefer to use a policy class instead:
+
+```typescript
+// page.policy.ts
 import { CanIKitPolicy } from "canikit";
-export default class Policy extends CanIKit {
+export default class Policy extends CanIKitPolicy {
   async view() {
     // We have access to this user object through this.user
     if (!this.user) return false;
@@ -127,8 +143,24 @@ Then, inside our policy file:
 
 ```typescript
 // page.policy.ts
+export async function view({ user, resource }) {
+  // We have access to this user object through this.user
+  // We have access to the resource through this.resource
+  if (!user) return false;
+
+  // We only want to allow the user to view the page if they are the owner of the todo item
+  if (user.id !== resource.userId) return false;
+
+  return true;
+}
+```
+
+Or, for a class policy:
+
+```typescript
+// page.policy.ts
 import { CanIKitPolicy } from "canikit";
-export default class Policy extends CanIKit {
+export default class Policy extends CanIKitPolicy {
   async view() {
     // We have access to this user object through this.user
     // We have access to the resource through this.resource
@@ -216,6 +248,16 @@ export async function load({ request, params, locals: { canI } }) {
 ### Using policies outside of the load/get/post/put/delete functions:
 
 Sometimes, you may want to use the policy outside of the load/get/post/put/delete functions. You can do this by importing the policy directly.
+
+```typescript
+import { view } from "./page.policy";
+
+async function someFunction({ user, resource }) {
+  const canView = await view({ user, resource });
+}
+```
+
+Or, for class policies:
 
 ```typescript
 import Policy from "./page.policy";

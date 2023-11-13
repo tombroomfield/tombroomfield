@@ -41,7 +41,7 @@ Every single +page.server, +layout.server, or +server file in your SvelteKit app
 
 > Can I (the current user) do this (action) on this (resource)?
 
-A simple policy file might look like this:
+A simple policy file might look like this (you can just export a `view` function directly if you prefer):
 
 ```typescript
 // routes/dashboard/page.policy.ts
