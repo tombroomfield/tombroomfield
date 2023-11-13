@@ -19,6 +19,7 @@
   <span class="p">}</span>
 <span class="p">);</span>
 </code></pre></div></div> <p>In the likely event that you are already using a hook, simply utilize the SvelteKit <code class="language-plaintext highlighter-rouge">sequence</code> function to combine the hooks.</p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// hooks.server.ts</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">error</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@sveltejs/kit</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="nx">CanIKit</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">canikit</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">sequence</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@sveltejs/kit/hooks</span><span class="dl">"</span><span class="p">;</span>
 
@@ -26,14 +27,19 @@
 
 <span class="k">export</span> <span class="kd">const</span> <span class="nx">handle</span> <span class="o">=</span> <span class="nf">sequence</span><span class="p">(</span>
   <span class="c1">// ... other hooks,</span>
-  <span class="nx">CanIKit</span><span class="p">.</span><span class="nf">handle</span><span class="p">({</span>
-    <span class="na">pagePolicies</span><span class="p">:</span> <span class="k">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="dl">"</span><span class="s2">./routes/**/page.policy.*</span><span class="dl">"</span><span class="p">),</span>
-    <span class="na">pageSevers</span><span class="p">:</span> <span class="k">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="dl">"</span><span class="s2">./routes/**/+page.server.*</span><span class="dl">"</span><span class="p">),</span>
-    <span class="na">layoutPolicies</span><span class="p">:</span> <span class="k">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="dl">"</span><span class="s2">./routes/**/layout.policy.*</span><span class="dl">"</span><span class="p">),</span>
-    <span class="na">layoutServers</span><span class="p">:</span> <span class="k">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="dl">"</span><span class="s2">./routes/**/+layout.server.*</span><span class="dl">"</span><span class="p">),</span>
-    <span class="na">apiServers</span><span class="p">:</span> <span class="k">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="dl">"</span><span class="s2">./routes/**/+server.*</span><span class="dl">"</span><span class="p">),</span>
-    <span class="na">apiPolicies</span><span class="p">:</span> <span class="k">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="dl">"</span><span class="s2">./routes/**/policy.*</span><span class="dl">"</span><span class="p">),</span>
-  <span class="p">})</span>
+  <span class="nx">CanIKit</span><span class="p">.</span><span class="nf">handle</span><span class="p">(</span>
+    <span class="p">{</span>
+      <span class="nx">error</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="na">pagePolicies</span><span class="p">:</span> <span class="k">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="dl">"</span><span class="s2">./routes/**/page.policy.*</span><span class="dl">"</span><span class="p">),</span>
+      <span class="na">pageSevers</span><span class="p">:</span> <span class="k">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="dl">"</span><span class="s2">./routes/**/+page.server.*</span><span class="dl">"</span><span class="p">),</span>
+      <span class="na">layoutPolicies</span><span class="p">:</span> <span class="k">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="dl">"</span><span class="s2">./routes/**/layout.policy.*</span><span class="dl">"</span><span class="p">),</span>
+      <span class="na">layoutServers</span><span class="p">:</span> <span class="k">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="dl">"</span><span class="s2">./routes/**/+layout.server.*</span><span class="dl">"</span><span class="p">),</span>
+      <span class="na">apiServers</span><span class="p">:</span> <span class="k">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="dl">"</span><span class="s2">./routes/**/+server.*</span><span class="dl">"</span><span class="p">),</span>
+      <span class="na">apiPolicies</span><span class="p">:</span> <span class="k">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nf">glob</span><span class="p">(</span><span class="dl">"</span><span class="s2">./routes/**/policy.*</span><span class="dl">"</span><span class="p">),</span>
+    <span class="p">}</span>
+  <span class="p">)</span>
 <span class="p">);</span>
 </code></pre></div></div> <h2 id="usage">Usage</h2> <p>Once setup, you will likely start getting some errors when you try to load your pages. This is because on every server-side load event, CanIKit will check to ensure that the <code class="language-plaintext highlighter-rouge">canI</code> method is called. Let’s see an example of how we can do that.</p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// +page.server.js</span>
 <span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nf">load</span><span class="p">({</span> <span class="nx">request</span><span class="p">,</span> <span class="na">locals</span><span class="p">:</span> <span class="p">{</span> <span class="nx">canI</span> <span class="p">}</span> <span class="p">})</span> <span class="p">{</span>
@@ -44,8 +50,13 @@
   <span class="c1">// ... other code</span>
 <span class="p">}</span>
 </code></pre></div></div> <p>In it’s most basic form, the <code class="language-plaintext highlighter-rouge">canI</code> function can be passed a user object. The user will be passed to the policy for the page, layout, or API route. Let’s see an example of a policy file for a page:</p> <p>In the same directory as the <code class="language-plaintext highlighter-rouge">+page.server.js|ts</code> file, create a <code class="language-plaintext highlighter-rouge">page.policy.js|ts</code> file.</p> <p>This very simple policy just checks to ensure that we have a signed in user, otherwise the authorization will fail.</p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// page.policy.ts</span>
+<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nf">view</span><span class="p">({</span> <span class="nx">user</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">user</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>Or, if you prefer to use a policy class instead:</p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// page.policy.ts</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">CanIKitPolicy</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">canikit</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nc">Policy</span> <span class="kd">extends</span> <span class="nc">CanIKit</span> <span class="p">{</span>
+<span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nc">Policy</span> <span class="kd">extends</span> <span class="nc">CanIKitPolicy</span> <span class="p">{</span>
   <span class="k">async</span> <span class="nf">view</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// We have access to this user object through this.user</span>
     <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">user</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
@@ -63,8 +74,19 @@
 <span class="p">}</span>
 
 </code></pre></div></div> <p>Then, inside our policy file:</p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// page.policy.ts</span>
+<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nf">view</span><span class="p">({</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">resource</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="c1">// We have access to this user object through this.user</span>
+  <span class="c1">// We have access to the resource through this.resource</span>
+  <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">user</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+
+  <span class="c1">// We only want to allow the user to view the page if they are the owner of the todo item</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">resource</span><span class="p">.</span><span class="nx">userId</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>Or, for a class policy:</p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// page.policy.ts</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">CanIKitPolicy</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">canikit</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nc">Policy</span> <span class="kd">extends</span> <span class="nc">CanIKit</span> <span class="p">{</span>
+<span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nc">Policy</span> <span class="kd">extends</span> <span class="nc">CanIKitPolicy</span> <span class="p">{</span>
   <span class="k">async</span> <span class="nf">view</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// We have access to this user object through this.user</span>
     <span class="c1">// We have access to the resource through this.resource</span>
@@ -98,7 +120,12 @@
 
   <span class="c1">// ... other code</span>
 <span class="p">}</span>
-</code></pre></div></div> <p><strong>Note:</strong> Ancestor layout policies will still be called before the custom policy.</p> <h3 id="using-policies-outside-of-the-loadgetpostputdelete-functions">Using policies outside of the load/get/post/put/delete functions:</h3> <p>Sometimes, you may want to use the policy outside of the load/get/post/put/delete functions. You can do this by importing the policy directly.</p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Policy</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./page.policy</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div> <p><strong>Note:</strong> Ancestor layout policies will still be called before the custom policy.</p> <h3 id="using-policies-outside-of-the-loadgetpostputdelete-functions">Using policies outside of the load/get/post/put/delete functions:</h3> <p>Sometimes, you may want to use the policy outside of the load/get/post/put/delete functions. You can do this by importing the policy directly.</p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">view</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./page.policy</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">someFunction</span><span class="p">({</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">resource</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">canView</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">view</span><span class="p">({</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">resource</span> <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>Or, for class policies:</p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Policy</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./page.policy</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nf">someFunction</span><span class="p">({</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">resource</span> <span class="p">})</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">policy</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Policy</span><span class="p">({</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">resource</span> <span class="p">});</span>
