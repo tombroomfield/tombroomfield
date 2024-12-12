@@ -27,18 +27,19 @@ I'm currently heading up the technology for a startup in Melbourne, Australia.
 Feel free to reach out at hi@tombroomfield.com
 
 ##### Things I love
-* Programming languages that focus on developer experience.
-* Clean code, simple solutions to complex problems and creativity in code.
+* Simple solutions to complex problems.
+* Joy and creativity in software development.
 * Building good software and better teams.
+* Programming languages that focus on developer experience.
 * Open source, and the communities that build it.
 * Deep work and protecting deep work for myself and others.
 * Asynchronous communication and distributed teams.
+* Passionate people.
 * Golf
 
 
 ##### Things I don't love
-* The wrong abstractions.
-* Meetings, especially meetings about meetings and meetings to check in on tasks.
+* High context code.
 * Golf
 
 
